@@ -5,5 +5,5 @@ export class Locations{
     address:string;
     city:string;
     zipcode:number;
-
+    notes:string;
 }
