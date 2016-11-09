@@ -5,4 +5,4 @@ var PickupLocation = (function () {
     return PickupLocation;
 }());
 exports.PickupLocation = PickupLocation;
-//# sourceMappingURL=pickuplocation.js.map
+//# sourceMappingURL=pickupLocation.js.map
