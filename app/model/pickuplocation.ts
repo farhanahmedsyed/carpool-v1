@@ -1,9 +1,9 @@
-export class Locations{
-    id:number;
+export class PickupLocation{
+     id:number;
     neighbourhoodid:number;
     name:string;
-    address:string;
+    street:string;
     city:string;
     zipcode:number;
-    notes:string;
+    notes?:string;
 }

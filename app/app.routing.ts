@@ -2,6 +2,7 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent }   from '../app/components/dashboard.component';
+import {NeighbourhoodComponent} from '../app/components/neighbourhood.component'
 
 const appRoutes: Routes = [
   {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path:'neighbourhood',
+    component:NeighbourhoodComponent
   }
 ];
 
