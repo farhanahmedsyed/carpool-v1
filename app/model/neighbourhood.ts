@@ -1,4 +1,4 @@
 export class Neighbourhood{
-    id:number;
-    name:string;
+    id: number;
+    name: string;
 }
