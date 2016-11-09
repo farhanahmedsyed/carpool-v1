@@ -8,8 +8,8 @@ import {NeighbourhoodService} from '../services/neighbourhood.service';
 @Component({
     moduleId:module.id,
     selector:'my-neighbourhood',
-    templateUrl:'',
-    styleUrls:['']
+    templateUrl:'../views/neighbourhood.component.html',
+    styleUrls:['../components/neighbourhood.component.css']
 })
 
 export class NeighbourhoodComponent implements OnInit{
