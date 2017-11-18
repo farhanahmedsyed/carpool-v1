@@ -11,25 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var neighbourhood_service_1 = require('../services/neighbourhood.service');
+var countries_http_service_1 = require('../services/countries.http.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(router, neighbourhoodService) {
+    function DashboardComponent(router, neighbourhoodService, countriesService) {
         this.router = router;
         this.neighbourhoodService = neighbourhoodService;
+        this.countriesService = countriesService;
         this.neighbourhoods = [];
     }
+    //,private countriesService: CountriesService
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.neighbourhoodService.getNeighbourhoods()
             .then(function (nh) { return _this.neighbourhoods = nh; });
+        this.countriesService.getCountries().subscribe(function (r) { return _this.countryList = r.json(); });
+    };
+    DashboardComponent.prototype.getCountryInfo = function () {
+        var _this = this;
+        this.countriesService.getCountryDetail(this.countryName).subscribe(function (resp) { return _this.countryObj = resp.json()[0]; });
+        //console.log(this.countryObj.name);
     };
     DashboardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-dashboard',
             templateUrl: '../views/dashboard.component.html',
-            styleUrls: ['../components/dashboard.component.css']
+            styleUrls: ['../components/dashboard.component.css'],
+            providers: [countries_http_service_1.CountriesService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, neighbourhood_service_1.NeighbourhoodService])
+        __metadata('design:paramtypes', [router_1.Router, neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

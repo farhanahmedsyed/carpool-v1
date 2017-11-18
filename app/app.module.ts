@@ -8,9 +8,10 @@ import {NeighbourhoodComponent} from './components/neighbourhood.component';
 
 import { NeighbourhoodService } from './services/neighbourhood.service';
 import { routing } from './app.routing';
+import { HttpModule} from '@angular/http';
 
 @NgModule({
-  imports:      [ BrowserModule,FormsModule,routing ],
+  imports:      [ BrowserModule,FormsModule,routing,HttpModule ],
   declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent],
   providers:[NeighbourhoodService],
   bootstrap:    [ AppComponent ]

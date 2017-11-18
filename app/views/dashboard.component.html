@@ -1,8 +1,20 @@
 <h3>Top Neighbourhoods</h3>
+
+
+<h3>Name:{{countryObj?.name}}</h3>
+<h3>Capital:{{countryObj?.capital}}</h3>
+<h3>Region:{{countryObj?.region}}</h3>
+
+<select [(ngModel)]="countryName">
+    <option *ngFor="let country of countryList" value="{{country.name}}">{{country.name}}</option>    
+</select>
+
+<button (click)="getCountryInfo()">Get Country Info</button>
+
 <div class="grid grid-pad">
-    <div *ngFor="let neighbourhood of neighbourhoods" class="col-1-4">
-        <div class="module neighbourhood">
-             <h4>{{neighbourhood.name}}</h4>   
-        </div>
-    </div>
+	<div *ngFor="let neighbourhood of neighbourhoods" class="col-1-4">
+		<div class="module neighbourhood">
+			<h4>{{neighbourhood.name}}</h4>
+		</div>
+	</div>
 </div>
