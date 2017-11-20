@@ -17,6 +17,7 @@ var DashboardComponent = (function () {
         this.router = router;
         this.neighbourhoodService = neighbourhoodService;
         this.countriesService = countriesService;
+        this.profileObj = { name: '', job: '', city: '', id: '' };
         this.neighbourhoods = [];
     }
     //,private countriesService: CountriesService
@@ -36,8 +37,7 @@ var DashboardComponent = (function () {
             moduleId: module.id,
             selector: 'my-dashboard',
             templateUrl: '../views/dashboard.component.html',
-            styleUrls: ['../components/dashboard.component.css'],
-            providers: [countries_http_service_1.CountriesService]
+            styleUrls: ['../components/dashboard.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService])
     ], DashboardComponent);

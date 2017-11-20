@@ -10,6 +10,16 @@
 </select>
 
 <button (click)="getCountryInfo()">Get Country Info</button>
+<hr/>
+
+<h2>Post response</h2>
+
+<h3>Name:<span>{{profileObj.name}}</span></h3>
+<h3>job:<span>{{profileObj.job}}</span></h3>
+<h3>City:<span>{{profileObj.city}}</span></h3>
+<h3>Id:<span>{{profileObj.id}}</span></h3>
+<button (click)="saveProfile()">Save Profile</button>
+<hr/>
 
 <div class="grid grid-pad">
 	<div *ngFor="let neighbourhood of neighbourhoods" class="col-1-4">

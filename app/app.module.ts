@@ -7,13 +7,15 @@ import { DashboardComponent }   from './components/dashboard.component';
 import {NeighbourhoodComponent} from './components/neighbourhood.component';
 
 import { NeighbourhoodService } from './services/neighbourhood.service';
+import {CountriesService} from './services/countries.http.service';
+import {ProfileService} from './services/profile.service'
 import { routing } from './app.routing';
 import { HttpModule} from '@angular/http';
 
 @NgModule({
   imports:      [ BrowserModule,FormsModule,routing,HttpModule ],
   declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent],
-  providers:[NeighbourhoodService],
+  providers:[NeighbourhoodService,CountriesService,ProfileService],
   bootstrap:    [ AppComponent ]
 })
 

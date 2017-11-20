@@ -15,6 +15,8 @@ var app_component_1 = require('./components/app.component');
 var dashboard_component_1 = require('./components/dashboard.component');
 var neighbourhood_component_1 = require('./components/neighbourhood.component');
 var neighbourhood_service_1 = require('./services/neighbourhood.service');
+var countries_http_service_1 = require('./services/countries.http.service');
+var profile_service_1 = require('./services/profile.service');
 var app_routing_1 = require('./app.routing');
 var http_1 = require('@angular/http');
 var AppModule = (function () {
@@ -24,7 +26,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, neighbourhood_component_1.NeighbourhoodComponent],
-            providers: [neighbourhood_service_1.NeighbourhoodService],
+            providers: [neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService, profile_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
