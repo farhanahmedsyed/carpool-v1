@@ -11,13 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
+require('rxjs/add/observable/throw');
+var Observable_1 = require('rxjs/Observable');
 var ProfileService = (function () {
     function ProfileService(_http) {
         this._http = _http;
     }
     ProfileService.prototype.saveProfile = function () {
         var _url = 'https://reqres.in/api/users';
-        return this._http.post(_url, { name: 'Farhan', job: 'Engineer', city: 'Houston' }).map(function (r) { return r.json; });
+        return this._http.post(_url, { name: 'Farhan', job: 'Engineer', city: 'Houston' })
+            .map(function (r) { return r.json(); })
+            .catch(this._errorHandler);
+    };
+    ProfileService.prototype._errorHandler = function (error) {
+        console.error(error);
+        return Observable_1.Observable.throw(error || 'Some error Occured');
     };
     ProfileService = __decorate([
         core_1.Injectable(), 

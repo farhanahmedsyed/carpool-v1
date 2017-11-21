@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit{
         private neighbourhoodService: NeighbourhoodService
         ,private countriesService: CountriesService
         ,private profileService: ProfileService){}
-//,private countriesService: CountriesService
+
     ngOnInit():void{
         this.neighbourhoodService.getNeighbourhoods()
         .then(nh=>this.neighbourhoods = nh);
@@ -41,6 +41,6 @@ export class DashboardComponent implements OnInit{
     }
 
     public saveProfile():void{
-        this.profileService.saveProfile().subscribe(r=>this.profileObj = r)
+        this.profileService.saveProfile().subscribe(r=>this.profileObj = r);        
     }
 }
