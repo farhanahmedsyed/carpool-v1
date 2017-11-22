@@ -19,13 +19,14 @@ var countries_http_service_1 = require('./services/countries.http.service');
 var profile_service_1 = require('./services/profile.service');
 var app_routing_1 = require('./app.routing');
 var http_1 = require('@angular/http');
+var hover_directive_1 = require('./custom-directives/hover-directive');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, neighbourhood_component_1.NeighbourhoodComponent],
+            declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, neighbourhood_component_1.NeighbourhoodComponent, hover_directive_1.MyAttributeDirective],
             providers: [neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService, profile_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]
         }), 

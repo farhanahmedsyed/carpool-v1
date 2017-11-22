@@ -11,10 +11,11 @@ import {CountriesService} from './services/countries.http.service';
 import {ProfileService} from './services/profile.service'
 import { routing } from './app.routing';
 import { HttpModule} from '@angular/http';
+import {MyAttributeDirective} from './custom-directives/hover-directive';
 
 @NgModule({
   imports:      [ BrowserModule,FormsModule,routing,HttpModule ],
-  declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent],
+  declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent,MyAttributeDirective], 
   providers:[NeighbourhoodService,CountriesService,ProfileService],
   bootstrap:    [ AppComponent ]
 })

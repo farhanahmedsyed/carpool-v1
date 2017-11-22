@@ -1,0 +1,1 @@
+{"version":3,"file":"hover-directive.js","sourceRoot":"","sources":["hover-directive.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAmC,eAAe,CAAC,CAAA;AAMnD;IACI,8BAAoB,EAAa;QAAb,OAAE,GAAF,EAAE,CAAW;QAChC,EAAE,CAAC,aAAa,CAAC,KAAK,CAAC,eAAe,GAAG,QAAQ,CAAC;IACnD,CAAC;IAPL;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,eAAe;SAC5B,CAAC;;4BAAA;IAMF,2BAAC;AAAD,CAAC,AAJD,IAIC;AAJY,4BAAoB,uBAIhC,CAAA"}
