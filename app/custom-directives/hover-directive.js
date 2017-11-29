@@ -9,11 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+//import { Input } from '@angular/core/src/metadata/directives';
 var MyAttributeDirective = (function () {
     function MyAttributeDirective(el) {
         this.el = el;
-        el.nativeElement.style.backgroundColor = 'orange';
+        //el.nativeElement.style.backgroundColor = 'orange';
     }
+    MyAttributeDirective.prototype.onMouseEnter = function () {
+        this.highlightColor(this.hoverColor);
+    };
+    MyAttributeDirective.prototype.onMouseLeave = function () {
+        this.highlightColor('yellow');
+    };
+    MyAttributeDirective.prototype.highlightColor = function (color) {
+        this.el.nativeElement.style.backgroundColor = color;
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], MyAttributeDirective.prototype, "hoverColor", void 0);
+    __decorate([
+        core_1.HostListener('mouseenter'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], MyAttributeDirective.prototype, "onMouseEnter", null);
+    __decorate([
+        core_1.HostListener('mouseleave'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], MyAttributeDirective.prototype, "onMouseLeave", null);
     MyAttributeDirective = __decorate([
         core_1.Directive({
             selector: '[customHover]'

@@ -43,4 +43,6 @@ export class DashboardComponent implements OnInit{
     public saveProfile():void{
         this.profileService.saveProfile().subscribe(r=>this.profileObj = r);        
     }
+
+    public isHidden = false;
 }

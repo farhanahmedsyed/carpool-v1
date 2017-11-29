@@ -21,6 +21,7 @@ var DashboardComponent = (function () {
         this.profileService = profileService;
         this.profileObj = { name: '', job: '', city: '', id: '' };
         this.neighbourhoods = [];
+        this.isHidden = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
