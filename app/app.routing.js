@@ -2,6 +2,9 @@
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('../app/components/dashboard.component');
 var neighbourhood_component_1 = require('../app/components/neighbourhood.component');
+var userProfile_component_1 = require('../app/components/userProfile.component');
+var place_component_1 = require('../app/components/place.component');
+var placeDetail_component_1 = require('../app/components/placeDetail.component');
 var appRoutes = [
     {
         path: '',
@@ -15,6 +18,17 @@ var appRoutes = [
     {
         path: 'neighbourhood',
         component: neighbourhood_component_1.NeighbourhoodComponent
+    },
+    {
+        path: 'userprofile',
+        component: userProfile_component_1.UserProfileComponent
+    },
+    {
+        path: 'place',
+        component: place_component_1.PlaceComponent,
+        children: [
+            { path: 'place/placeDetail', component: placeDetail_component_1.PlaceDetailComponent }
+        ]
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
