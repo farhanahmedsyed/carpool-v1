@@ -6,7 +6,7 @@ import {NeighbourhoodComponent} from '../app/components/neighbourhood.component'
 import {UserProfileComponent} from '../app/components/userProfile.component';
 import {PlaceComponent} from '../app/components/place.component';
 import {PlaceDetailComponent} from '../app/components/placeDetail.component';
-
+import {PickupSpotsComponent} from '../app/components/neighbourhood.pickup.spots.component';
 
 const appRoutes: Routes = [
   {
@@ -20,7 +20,13 @@ const appRoutes: Routes = [
   },
   {
     path:'neighbourhood',
-    component:NeighbourhoodComponent
+    component:NeighbourhoodComponent,
+    children:[           
+      {
+        path:'pickupSpot/:selectedNeighbourhood',
+        component:PickupSpotsComponent
+      }
+    ]
   },
   {
     path:'userprofile',
@@ -29,9 +35,12 @@ const appRoutes: Routes = [
   {
     path:'place',
     component:PlaceComponent,
-    children:[
-      {path:'place/placeDetail',component:PlaceDetailComponent}
-     ]
+    children:[       
+        {
+          path:'detail',
+          component:PlaceDetailComponent
+        },
+      ]
   }
 ];
 

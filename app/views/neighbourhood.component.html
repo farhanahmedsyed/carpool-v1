@@ -1,9 +1,10 @@
 <h2>Neighbourhoods</h2>
+
 <ul class="neighbourhoods">
     <li *ngFor="let neighbourhood of neighbourhoods" 
         [class.selected]="neighbourhood === selectedneighbourhood"
         (click) = "onSelect(neighbourhood)">
-        <span class="badge">{{neighbourhood.id}}</span>{{neighbourhood.name}}
+        <span class="badge">{{neighbourhood.id}}</span>{{neighbourhood.name}}        
     </li> 
 </ul>
 
@@ -11,4 +12,11 @@
     <h2>
         {{selectedNeighbourhood.name | uppercase}} is my neighbourhood
     </h2>
+</div>
+
+
+<div>
+    <a [routerLink]="['pickupSpot','cincoranch']" routerLinkActive="active">cincoranch</a>
+  
+    <router-outlet></router-outlet>
 </div>

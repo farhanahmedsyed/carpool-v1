@@ -14,6 +14,7 @@ import {NeighbourhoodService} from '../services/neighbourhood.service';
 
 export class NeighbourhoodComponent implements OnInit{
 
+
     neighbourhoods: Neighbourhood[];
     selectedNeighbourhood: Neighbourhood;
 

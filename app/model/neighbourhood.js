@@ -1,5 +1,6 @@
 "use strict";
-var Neighbourhood = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Neighbourhood = /** @class */ (function () {
     function Neighbourhood() {
     }
     return Neighbourhood;

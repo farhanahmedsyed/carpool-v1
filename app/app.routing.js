@@ -1,10 +1,12 @@
 "use strict";
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('../app/components/dashboard.component');
-var neighbourhood_component_1 = require('../app/components/neighbourhood.component');
-var userProfile_component_1 = require('../app/components/userProfile.component');
-var place_component_1 = require('../app/components/place.component');
-var placeDetail_component_1 = require('../app/components/placeDetail.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var dashboard_component_1 = require("../app/components/dashboard.component");
+var neighbourhood_component_1 = require("../app/components/neighbourhood.component");
+var userProfile_component_1 = require("../app/components/userProfile.component");
+var place_component_1 = require("../app/components/place.component");
+var placeDetail_component_1 = require("../app/components/placeDetail.component");
+var neighbourhood_pickup_spots_component_1 = require("../app/components/neighbourhood.pickup.spots.component");
 var appRoutes = [
     {
         path: '',
@@ -17,7 +19,13 @@ var appRoutes = [
     },
     {
         path: 'neighbourhood',
-        component: neighbourhood_component_1.NeighbourhoodComponent
+        component: neighbourhood_component_1.NeighbourhoodComponent,
+        children: [
+            {
+                path: 'pickupSpot/:selectedNeighbourhood',
+                component: neighbourhood_pickup_spots_component_1.PickupSpotsComponent
+            }
+        ]
     },
     {
         path: 'userprofile',
@@ -27,7 +35,10 @@ var appRoutes = [
         path: 'place',
         component: place_component_1.PlaceComponent,
         children: [
-            { path: 'place/placeDetail', component: placeDetail_component_1.PlaceDetailComponent }
+            {
+                path: 'detail',
+                component: placeDetail_component_1.PlaceDetailComponent
+            },
         ]
     }
 ];

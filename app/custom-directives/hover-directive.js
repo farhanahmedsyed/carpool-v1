@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 //import { Input } from '@angular/core/src/metadata/directives';
-var MyAttributeDirective = (function () {
+var MyAttributeDirective = /** @class */ (function () {
     function MyAttributeDirective(el) {
         this.el = el;
         //el.nativeElement.style.backgroundColor = 'orange';
@@ -25,26 +26,26 @@ var MyAttributeDirective = (function () {
         this.el.nativeElement.style.backgroundColor = color;
     };
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
+        core_1.Input(),
+        __metadata("design:type", String)
     ], MyAttributeDirective.prototype, "hoverColor", void 0);
     __decorate([
-        core_1.HostListener('mouseenter'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
+        core_1.HostListener('mouseenter'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
     ], MyAttributeDirective.prototype, "onMouseEnter", null);
     __decorate([
-        core_1.HostListener('mouseleave'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
+        core_1.HostListener('mouseleave'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
     ], MyAttributeDirective.prototype, "onMouseLeave", null);
     MyAttributeDirective = __decorate([
         core_1.Directive({
             selector: '[customHover]'
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef])
     ], MyAttributeDirective);
     return MyAttributeDirective;
 }());

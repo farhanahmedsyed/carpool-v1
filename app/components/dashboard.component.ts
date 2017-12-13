@@ -1,10 +1,11 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import {Neighbourhood} from '../model/neighbourhood';
 import {NeighbourhoodService} from '../services/neighbourhood.service';
 import {CountriesService} from '../services/countries.http.service';
 import {ProfileService} from '../services/profile.service';
+import { version } from 'core-js/library/web/timers';
 
 @Component({
     moduleId: module.id,
@@ -25,7 +26,10 @@ export class DashboardComponent implements OnInit{
     constructor(private router: Router,
         private neighbourhoodService: NeighbourhoodService
         ,private countriesService: CountriesService
-        ,private profileService: ProfileService){}
+        ,private profileService: ProfileService){
+
+            //console.log()
+        }
 
     ngOnInit():void{
         this.neighbourhoodService.getNeighbourhoods()

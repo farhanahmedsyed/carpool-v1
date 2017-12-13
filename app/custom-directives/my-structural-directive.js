@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var MyStructuralDirctive = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var MyStructuralDirctive = /** @class */ (function () {
     function MyStructuralDirctive(templateRef, viewContainer) {
         this.templateRef = templateRef;
         this.viewContainer = viewContainer;
@@ -27,15 +28,16 @@ var MyStructuralDirctive = (function () {
         configurable: true
     });
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean), 
-        __metadata('design:paramtypes', [Boolean])
+        core_1.Input(),
+        __metadata("design:type", Boolean),
+        __metadata("design:paramtypes", [Boolean])
     ], MyStructuralDirctive.prototype, "hideThisElement", null);
     MyStructuralDirctive = __decorate([
         core_1.Directive({
             selector: '[hideThisElement]'
-        }), 
-        __metadata('design:paramtypes', [core_1.TemplateRef, core_1.ViewContainerRef])
+        }),
+        __metadata("design:paramtypes", [core_1.TemplateRef,
+            core_1.ViewContainerRef])
     ], MyStructuralDirctive);
     return MyStructuralDirctive;
 }());

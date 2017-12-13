@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var neighbourhood_service_1 = require('../services/neighbourhood.service');
-var countries_http_service_1 = require('../services/countries.http.service');
-var profile_service_1 = require('../services/profile.service');
-var DashboardComponent = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var neighbourhood_service_1 = require("../services/neighbourhood.service");
+var countries_http_service_1 = require("../services/countries.http.service");
+var profile_service_1 = require("../services/profile.service");
+var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(router, neighbourhoodService, countriesService, profileService) {
         this.router = router;
         this.neighbourhoodService = neighbourhoodService;
@@ -22,6 +23,7 @@ var DashboardComponent = (function () {
         this.profileObj = { name: '', job: '', city: '', id: '' };
         this.neighbourhoods = [];
         this.isHidden = false;
+        //console.log()
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -44,8 +46,11 @@ var DashboardComponent = (function () {
             selector: 'my-dashboard',
             templateUrl: '../views/dashboard.component.html',
             styleUrls: ['../components/dashboard.component.css']
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService, profile_service_1.ProfileService])
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            neighbourhood_service_1.NeighbourhoodService,
+            countries_http_service_1.CountriesService,
+            profile_service_1.ProfileService])
     ], DashboardComponent);
     return DashboardComponent;
 }());
