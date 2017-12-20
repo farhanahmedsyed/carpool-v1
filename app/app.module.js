@@ -16,21 +16,22 @@ var userProfile_component_1 = require("./components/userProfile.component");
 var place_component_1 = require("./components/place.component");
 var placeDetail_component_1 = require("./components/placeDetail.component");
 var neighbourhood_pickup_spots_component_1 = require("../app/components/neighbourhood.pickup.spots.component");
-var hover_directive_1 = require("./custom-directives/hover-directive");
-var my_structural_directive_1 = require("./custom-directives/my-structural-directive");
 var neighbourhood_service_1 = require("./services/neighbourhood.service");
 var countries_http_service_1 = require("./services/countries.http.service");
 var profile_service_1 = require("./services/profile.service");
 var app_routing_1 = require("./app.routing");
 var http_1 = require("@angular/http");
+//import {CountriesModule} from './custom-modules/countries.modules';
+var router_1 = require("@angular/router");
+var country_route_1 = require("./country.route");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule, router_1.RouterModule, country_route_1.CountryRoute],
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, neighbourhood_component_1.NeighbourhoodComponent, userProfile_component_1.UserProfileComponent, place_component_1.PlaceComponent,
-                placeDetail_component_1.PlaceDetailComponent, neighbourhood_pickup_spots_component_1.PickupSpotsComponent, hover_directive_1.MyAttributeDirective, my_structural_directive_1.MyStructuralDirctive],
+                placeDetail_component_1.PlaceDetailComponent, neighbourhood_pickup_spots_component_1.PickupSpotsComponent],
             providers: [neighbourhood_service_1.NeighbourhoodService, countries_http_service_1.CountriesService, profile_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]
         })

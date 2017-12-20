@@ -12,30 +12,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var neighbourhood_service_1 = require("../services/neighbourhood.service");
-var countries_http_service_1 = require("../services/countries.http.service");
 var profile_service_1 = require("../services/profile.service");
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(router, neighbourhoodService, countriesService, profileService) {
+    function DashboardComponent(router, neighbourhoodService, profileService) {
         this.router = router;
         this.neighbourhoodService = neighbourhoodService;
-        this.countriesService = countriesService;
         this.profileService = profileService;
+        //public countryObj:any;
+        //public countryList:any;
+        //public countryName:string;
         this.profileObj = { name: '', job: '', city: '', id: '' };
         this.neighbourhoods = [];
         this.isHidden = false;
-        //console.log()
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.neighbourhoodService.getNeighbourhoods()
             .then(function (nh) { return _this.neighbourhoods = nh; });
-        this.countriesService.getCountries().subscribe(function (r) { return _this.countryList = r.json(); });
+        //this.countriesService.getCountries().subscribe(r=>this.countryList=r.json());
     };
-    DashboardComponent.prototype.getCountryInfo = function () {
-        var _this = this;
-        this.countriesService.getCountryDetail(this.countryName).subscribe(function (resp) { return _this.countryObj = resp.json()[0]; });
-        //console.log(this.countryObj.name);
-    };
+    /*public getCountryInfo(){
+        this.countriesService.getCountryDetail(this.countryName).subscribe(resp => this.countryObj=resp.json()[0]);
+    }*/
     DashboardComponent.prototype.saveProfile = function () {
         var _this = this;
         this.profileService.saveProfile().subscribe(function (r) { return _this.profileObj = r; });
@@ -49,7 +47,6 @@ var DashboardComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [router_1.Router,
             neighbourhood_service_1.NeighbourhoodService,
-            countries_http_service_1.CountriesService,
             profile_service_1.ProfileService])
     ], DashboardComponent);
     return DashboardComponent;

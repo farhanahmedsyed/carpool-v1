@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import {Neighbourhood} from '../model/neighbourhood';
 import {NeighbourhoodService} from '../services/neighbourhood.service';
-import {CountriesService} from '../services/countries.http.service';
+
 import {ProfileService} from '../services/profile.service';
 import { version } from 'core-js/library/web/timers';
 
@@ -16,33 +16,27 @@ import { version } from 'core-js/library/web/timers';
 })
 
 export class DashboardComponent implements OnInit{
-    public countryObj:any;
-    public countryList:any;
-    public countryName:string;
+    //public countryObj:any;
+    //public countryList:any;
+    //public countryName:string;
     public profileObj:any={name:'',job:'',city:'',id:''};
     
     neighbourhoods: Neighbourhood[]=[];
 
     constructor(private router: Router,
-        private neighbourhoodService: NeighbourhoodService
-        ,private countriesService: CountriesService
+        private neighbourhoodService: NeighbourhoodService       
         ,private profileService: ProfileService){
-
-            //console.log()
         }
 
     ngOnInit():void{
         this.neighbourhoodService.getNeighbourhoods()
         .then(nh=>this.neighbourhoods = nh);
-
-        this.countriesService.getCountries().subscribe(r=>this.countryList=r.json());
+        //this.countriesService.getCountries().subscribe(r=>this.countryList=r.json());
     }
 
-    public getCountryInfo(){
+    /*public getCountryInfo(){
         this.countriesService.getCountryDetail(this.countryName).subscribe(resp => this.countryObj=resp.json()[0]);
-
-        //console.log(this.countryObj.name);
-    }
+    }*/
 
     public saveProfile():void{
         this.profileService.saveProfile().subscribe(r=>this.profileObj = r);        

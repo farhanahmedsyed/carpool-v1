@@ -10,8 +10,7 @@ import { PlaceComponent } from './components/place.component';
 import { PlaceDetailComponent } from './components/placeDetail.component';
 import { PickupSpotsComponent } from '../app/components/neighbourhood.pickup.spots.component';
 
-import { MyAttributeDirective } from './custom-directives/hover-directive';
-import { MyStructuralDirctive } from './custom-directives/my-structural-directive';
+
 
 import { NeighbourhoodService } from './services/neighbourhood.service';
 import { CountriesService } from './services/countries.http.service';
@@ -20,11 +19,14 @@ import { ProfileService } from './services/profile.service'
 import { routing } from './app.routing';
 import { HttpModule} from '@angular/http';
 
+//import {CountriesModule} from './custom-modules/countries.modules';
+import { RouterModule } from '@angular/router';
+import { CountryRoute } from './country.route';
 
 @NgModule({
-  imports:      [ BrowserModule,FormsModule,routing,HttpModule ],
+  imports:      [ BrowserModule,FormsModule,routing,HttpModule,RouterModule,CountryRoute ],
   declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent,UserProfileComponent,PlaceComponent,
-                PlaceDetailComponent,PickupSpotsComponent,MyAttributeDirective,MyStructuralDirctive], 
+                PlaceDetailComponent,PickupSpotsComponent], 
   providers:    [NeighbourhoodService,CountriesService,ProfileService],
   bootstrap:    [ AppComponent ]
 })
