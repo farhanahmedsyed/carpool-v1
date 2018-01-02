@@ -1,13 +1,24 @@
 import {Component} from '@angular/core';
 
 @Component({
-    template:`<h1>Create Places</h1>              
-                <a [routerLink]="['detail']" routerLinkActive="active">AddEditPlaceDetail</a>          
-              <div>                
-                <router-outlet></router-outlet>
-              </div>
-              `
+ 
+  selector:'my-place',
+  templateUrl:'app/views/place.component.html',
+  styles:[`
+    [name=city].ng-invalid {
+       border-left: 7px solid red; 
+    }  
+    input.ng-valid {
+      border-left: 7px solid green; 
+   }  
+  `]  
 })
 
-export class PlaceComponent{}
+export class PlaceComponent{
+
+  public formSubmit(data: any):void{
+    console.log('Data', data);
+  }
+
+}
 

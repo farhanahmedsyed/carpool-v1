@@ -10,8 +10,6 @@ import { PlaceComponent } from './components/place.component';
 import { PlaceDetailComponent } from './components/placeDetail.component';
 import { PickupSpotsComponent } from '../app/components/neighbourhood.pickup.spots.component';
 
-
-
 import { NeighbourhoodService } from './services/neighbourhood.service';
 import { CountriesService } from './services/countries.http.service';
 import { ProfileService } from './services/profile.service'
@@ -23,8 +21,10 @@ import { HttpModule} from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { CountryRoute } from './country.route';
 
+
+
 @NgModule({
-  imports:      [ BrowserModule,FormsModule,routing,HttpModule,RouterModule,CountryRoute ],
+  imports:      [ BrowserModule,FormsModule,routing,HttpModule,RouterModule,CountryRoute],
   declarations: [ AppComponent,DashboardComponent,NeighbourhoodComponent,UserProfileComponent,PlaceComponent,
                 PlaceDetailComponent,PickupSpotsComponent], 
   providers:    [NeighbourhoodService,CountriesService,ProfileService],

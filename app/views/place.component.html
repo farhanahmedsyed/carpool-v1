@@ -1,0 +1,39 @@
+<h1>Create Places</h1>  
+
+<form #placeForm="ngForm" (ngSubmit)="formSubmit(placeForm.value)">
+
+<!--span>{{cityField.classList | json}}</span-->
+
+    <div class="form-group">
+        <label>State</label>
+        <select class="form-control" name="state" ngModel>
+            <option value="TX">TX</option>
+            <option value="NY">NY</option>
+            <option value="MA">MA</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input type="city" #cityField="ngModel" class="form-control" name="city" [(ngModel)] = "city" required>
+    </div>   
+    <div [hidden]="cityField.valid" class="alert alert-danger">
+        City is required
+    </div> 
+    <div class="form-group">
+        <label>Neighbourhood</label>
+        <input type="neighbourhood" class="form-control" name="neighood" ngModel>
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input type="location" class="form-control" name="location" ngModel>
+    </div>
+    <input type="submit" name="btnSave" class="btn btn-primary"/>
+</form>
+
+<span>{{placeForm.value | json}}</span>
+
+<br>
+<a [routerLink]="['detail']" routerLinkActive="active">AddEditPlaceDetail</a>          
+<div>                
+<router-outlet></router-outlet>
+</div>

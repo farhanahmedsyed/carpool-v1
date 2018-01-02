@@ -10,9 +10,14 @@ var core_1 = require("@angular/core");
 var PlaceComponent = /** @class */ (function () {
     function PlaceComponent() {
     }
+    PlaceComponent.prototype.formSubmit = function (data) {
+        console.log('Data', data);
+    };
     PlaceComponent = __decorate([
         core_1.Component({
-            template: "<h1>Create Places</h1>              \n                <a [routerLink]=\"['detail']\" routerLinkActive=\"active\">AddEditPlaceDetail</a>          \n              <div>                \n                <router-outlet></router-outlet>\n              </div>\n              "
+            selector: 'my-place',
+            templateUrl: 'app/views/place.component.html',
+            styles: ["\n    [name=city].ng-invalid {\n       border-left: 7px solid red; \n    }  \n    input.ng-valid {\n      border-left: 7px solid green; \n   }  \n  "]
         })
     ], PlaceComponent);
     return PlaceComponent;
